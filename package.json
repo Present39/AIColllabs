@@ -1,0 +1,26 @@
+{
+  "name": "aicolllabs",
+  "version": "1.0.0",
+  "description": "Link Learn Leverage your business with AI - Dora 3D Component",
+  "main": "components/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react",
+    "component",
+    "3d",
+    "accessibility",
+    "figma"
+  ],
+  "author": "AIColllabs Team",
+  "license": "ISC",
+  "peerDependencies": {
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
+    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
+  },
+  "devDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  }
+}

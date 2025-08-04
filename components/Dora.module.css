@@ -1,0 +1,179 @@
+/* Dora Component CSS Module - 3D-specialist styling */
+
+.dora {
+  /* Basisvorm en layout */
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 12px;
+  padding: 16px;
+  
+  /* Basis kleuren - aangepast voor 3D-specialist thema */
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: 2px solid transparent;
+  
+  /* Schaduw effecten */
+  box-shadow: 
+    0 4px 12px rgba(102, 126, 234, 0.15),
+    0 2px 4px rgba(0, 0, 0, 0.1);
+  
+  /* Basis interactie states */
+  outline: none;
+}
+
+.dora:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 8px 20px rgba(102, 126, 234, 0.25),
+    0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.dora:active {
+  transform: translateY(0);
+  transition: transform 0.1s ease;
+}
+
+/* Focus styling voor toegankelijkheid - WCAG compliant */
+.dora:focus,
+.dora:focus-visible {
+  border-color: #4f46e5;
+  box-shadow: 
+    0 0 0 3px rgba(79, 70, 229, 0.3),
+    0 4px 12px rgba(102, 126, 234, 0.15),
+    0 2px 4px rgba(0, 0, 0, 0.1);
+  outline: none;
+}
+
+.doraContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  min-width: 120px;
+}
+
+.doraPlaceholder {
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 
+    inset 0 2px 4px rgba(0, 0, 0, 0.1),
+    0 2px 8px rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.dora:hover .doraPlaceholder {
+  transform: scale(1.05);
+  box-shadow: 
+    inset 0 2px 4px rgba(0, 0, 0, 0.15),
+    0 4px 12px rgba(255, 255, 255, 0.3);
+}
+
+.placeholderIcon {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(45deg, #f093fb 0%, #f5576c 50%, #4facfe 100%);
+  border-radius: 50%;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.placeholderText {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 1px;
+}
+
+.doraLabel {
+  text-align: center;
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.labelText {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 2px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.labelSubtext {
+  display: block;
+  font-size: 12px;
+  opacity: 0.9;
+  font-weight: 400;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* High contrast ondersteuning voor toegankelijkheid */
+@media (prefers-contrast: high) {
+  .dora {
+    border: 2px solid #000;
+    background: #fff;
+  }
+  
+  .doraLabel {
+    color: #000;
+    text-shadow: none;
+  }
+  
+  .placeholderIcon {
+    background: #000;
+    color: #fff;
+  }
+}
+
+/* Reduced motion ondersteuning voor toegankelijkheid */
+@media (prefers-reduced-motion: reduce) {
+  .dora,
+  .doraPlaceholder {
+    transition: none;
+  }
+  
+  .dora:hover {
+    transform: none;
+  }
+  
+  .dora:hover .doraPlaceholder {
+    transform: none;
+  }
+}
+
+/* Responsieve aanpassingen */
+@media (max-width: 768px) {
+  .dora {
+    padding: 12px;
+  }
+  
+  .doraContainer {
+    min-width: 100px;
+    gap: 8px;
+  }
+  
+  .doraPlaceholder {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .placeholderIcon {
+    font-size: 14px;
+  }
+  
+  .labelText {
+    font-size: 14px;
+  }
+  
+  .labelSubtext {
+    font-size: 11px;
+  }
+}
