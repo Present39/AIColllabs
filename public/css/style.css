@@ -1,12 +1,12 @@
 /* AIColllabs Styles */
 :root {
-    --primary-color: #6366f1;
+    --primary-color: #4f46e5;
     --secondary-color: #f1f5f9;
     --accent-color: #10b981;
     --text-color: #1f2937;
     --bg-color: #ffffff;
     --border-color: #e5e7eb;
-    --claudette-color: #8b5cf6;
+    --claudette-color: #7c3aed;
 }
 
 * {
@@ -30,7 +30,7 @@ body {
 
 /* Header */
 .header {
-    background: linear-gradient(135deg, var(--primary-color), var(--claudette-color));
+    background: linear-gradient(135deg, #4f46e5, #7c3aed, #ec4899);
     color: white;
     padding: 1rem 0;
 }
@@ -44,11 +44,14 @@ body {
 .logo h1 {
     font-size: 1.8rem;
     margin-bottom: 0.2rem;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .logo p {
     font-size: 0.9rem;
-    opacity: 0.9;
+    opacity: 0.95;
+    font-weight: 500;
 }
 
 .nav {
@@ -124,10 +127,11 @@ body {
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--claudette-color), #ec4899);
+    background: linear-gradient(135deg, #7c3aed, #ec4899, #f97316);
     margin: 0 auto;
     position: relative;
     animation: float 3s ease-in-out infinite;
+    box-shadow: 0 4px 20px rgba(124, 58, 237, 0.3);
 }
 
 .sphere::before {
@@ -150,7 +154,7 @@ body {
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--claudette-color), #ec4899);
+    background: linear-gradient(135deg, #7c3aed, #ec4899, #f97316);
     display: inline-block;
 }
 
