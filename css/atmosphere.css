@@ -1,0 +1,303 @@
+/* AICollabs Atmosphere System - Eggshell White Background with Brand Accents */
+
+/* Atmosphere Container - Main wrapper for the entire page */
+.atmosphere-container {
+  min-height: 100vh;
+  background: var(--bg-primary); /* Eggshell white #FEFCF7 */
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Atmospheric Background Effects */
+.atmosphere-container::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 20%, rgba(255, 69, 0, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(50, 205, 50, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 50% 80%, rgba(255, 165, 0, 0.02) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Floating Atmosphere Elements */
+.atmosphere-container::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, rgba(255, 69, 0, 0.1), transparent),
+    radial-gradient(2px 2px at 40px 70px, rgba(50, 205, 50, 0.1), transparent),
+    radial-gradient(1px 1px at 90px 40px, rgba(255, 165, 0, 0.1), transparent),
+    radial-gradient(1px 1px at 130px 80px, rgba(255, 140, 0, 0.1), transparent);
+  background-repeat: repeat;
+  background-size: 150px 100px;
+  animation: atmosphereFloat 20s linear infinite;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.3;
+}
+
+@keyframes atmosphereFloat {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(-10px, -10px); }
+  50% { transform: translate(10px, -20px); }
+  75% { transform: translate(-5px, -10px); }
+  100% { transform: translate(0, 0); }
+}
+
+/* Atmosphere Zones - Different background treatments for sections */
+.atmosphere-hero {
+  background: 
+    linear-gradient(135deg, transparent 0%, rgba(255, 69, 0, 0.02) 50%, transparent 100%),
+    var(--bg-primary);
+  position: relative;
+}
+
+.atmosphere-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background: radial-gradient(ellipse at center, rgba(255, 140, 0, 0.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.atmosphere-services {
+  background: 
+    linear-gradient(90deg, 
+      rgba(255, 69, 0, 0.01) 0%, 
+      rgba(255, 165, 0, 0.01) 50%, 
+      rgba(50, 205, 50, 0.01) 100%
+    ),
+    var(--bg-primary);
+  position: relative;
+}
+
+.atmosphere-characters {
+  background: 
+    radial-gradient(ellipse at center, rgba(50, 205, 50, 0.02) 0%, var(--bg-primary) 70%);
+  position: relative;
+}
+
+/* Atmosphere Particles - Subtle animated elements */
+.atmosphere-particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  animation: particleFloat 15s linear infinite;
+}
+
+.particle-orange {
+  background: var(--brand-orange-start);
+  opacity: 0.1;
+}
+
+.particle-green {
+  background: var(--brand-green-start);
+  opacity: 0.1;
+}
+
+.particle-yellow {
+  background: var(--brand-yellow);
+  opacity: 0.1;
+}
+
+@keyframes particleFloat {
+  0% {
+    transform: translateY(100vh) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.1;
+  }
+  90% {
+    opacity: 0.1;
+  }
+  100% {
+    transform: translateY(-10vh) translateX(100px);
+    opacity: 0;
+  }
+}
+
+/* Atmosphere Overlays for Different States */
+.atmosphere-overlay {
+  position: relative;
+}
+
+.atmosphere-overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--bg-overlay);
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0;
+  transition: var(--transition-slow);
+}
+
+.atmosphere-overlay:hover::before {
+  opacity: 1;
+}
+
+/* Interactive Atmosphere Elements */
+.atmosphere-interactive {
+  position: relative;
+  transition: var(--transition-normal);
+}
+
+.atmosphere-interactive:hover {
+  transform: translateY(-2px);
+}
+
+.atmosphere-interactive::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: radial-gradient(circle, rgba(255, 69, 0, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: var(--transition-slow);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.atmosphere-interactive:hover::after {
+  width: 200px;
+  height: 200px;
+}
+
+/* Atmosphere Sections with Brand Colors */
+.hero-section {
+  background: var(--bg-primary);
+  position: relative;
+}
+
+.services-section {
+  background: linear-gradient(135deg, var(--bg-primary) 0%, rgba(255, 165, 0, 0.01) 100%);
+  position: relative;
+}
+
+.characters-section {
+  background: linear-gradient(135deg, rgba(50, 205, 50, 0.01) 0%, var(--bg-primary) 100%);
+  position: relative;
+}
+
+/* Atmosphere Focus States */
+.atmosphere-focus {
+  position: relative;
+}
+
+.atmosphere-focus:focus {
+  outline: none;
+}
+
+.atmosphere-focus:focus::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  background: linear-gradient(45deg, var(--brand-orange-start), var(--brand-green-start));
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0.3;
+}
+
+/* Atmosphere Loading States */
+.atmosphere-loading {
+  position: relative;
+  overflow: hidden;
+}
+
+.atmosphere-loading::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(255, 69, 0, 0.1) 50%, 
+    transparent 100%
+  );
+  animation: atmosphereShimmer 2s ease-in-out infinite;
+}
+
+@keyframes atmosphereShimmer {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+/* Dark Mode Atmosphere (if needed) */
+@media (prefers-color-scheme: dark) {
+  .atmosphere-container {
+    background: #1a1a1a;
+  }
+  
+  .atmosphere-container::before {
+    background: 
+      radial-gradient(circle at 20% 20%, rgba(255, 69, 0, 0.05) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(50, 205, 50, 0.05) 0%, transparent 50%),
+      radial-gradient(circle at 50% 80%, rgba(255, 165, 0, 0.03) 0%, transparent 50%);
+  }
+}
+
+/* Responsive Atmosphere Adjustments */
+@media (max-width: 768px) {
+  .atmosphere-container::after {
+    background-size: 100px 80px;
+    animation-duration: 15s;
+  }
+  
+  .particle {
+    width: 3px;
+    height: 3px;
+  }
+  
+  .atmosphere-interactive::after {
+    max-width: 150px;
+    max-height: 150px;
+  }
+}
+
+/* Reduced Motion Preferences */
+@media (prefers-reduced-motion: reduce) {
+  .atmosphere-container::after,
+  .particle,
+  .atmosphere-loading::before {
+    animation: none;
+  }
+  
+  .atmosphere-interactive {
+    transition: none;
+  }
+}
