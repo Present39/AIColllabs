@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIColllabs - Learn with AI</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <div class="logo">
+                    <h1>AIColllabs</h1>
+                    <p>Learn with AI</p>
+                </div>
+                <nav class="nav">
+                    <a href="#" class="nav-link" onclick="showSection('home')">Home</a>
+                    <a href="#" class="nav-link" onclick="showSection('products')">Producten</a>
+                    <a href="#" class="nav-link" onclick="showSection('account')" id="accountLink" style="display: none;">Account</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main">
+            <!-- Home Section -->
+            <section id="home" class="section active">
+                <div class="container">
+                    <div class="hero">
+                        <div class="hero-content">
+                            <h2>Welkom bij AIColllabs!</h2>
+                            <p>Ontdek de perfecte leerervaring met onze AI-begeleiders</p>
+                        </div>
+                        <div class="claudette-container">
+                            <div class="character claudette">
+                                <div class="character-avatar">
+                                    <div class="sphere"></div>
+                                </div>
+                                <h3>Claudette</h3>
+                                <p>Jouw persoonlijke AI-gids</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Chat Interface -->
+                    <div class="chat-container" id="chatContainer">
+                        <div class="chat-messages" id="chatMessages">
+                            <!-- Messages will be added here -->
+                        </div>
+                        <div class="chat-input">
+                            <input type="text" id="messageInput" placeholder="Typ je bericht..." disabled>
+                            <button id="sendButton" onclick="sendMessage()" disabled>Verzend</button>
+                        </div>
+                    </div>
+
+                    <!-- Welcome Buttons -->
+                    <div class="welcome-buttons" id="welcomeButtons" style="display: none;">
+                        <button class="btn btn-primary" onclick="startAccountMode()">
+                            Maak een account aan voor persoonlijk advies
+                        </button>
+                        <button class="btn btn-secondary" onclick="startBrowseMode()">
+                            Gewoon rondkijken zonder account
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Products Section -->
+            <section id="products" class="section">
+                <div class="container">
+                    <h2>Onze Producten</h2>
+                    <div class="product-categories">
+                        <button class="category-btn active" onclick="filterProducts('all')">Alles</button>
+                        <button class="category-btn" onclick="filterProducts('games')">Games</button>
+                        <button class="category-btn" onclick="filterProducts('subscriptions')">Abonnementen</button>
+                        <button class="category-btn" onclick="filterProducts('blueprints')">Blueprints</button>
+                    </div>
+                    <div class="products-grid" id="productsGrid">
+                        <!-- Products will be loaded here -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Account Section -->
+            <section id="account" class="section">
+                <div class="container">
+                    <h2>Mijn Account</h2>
+                    <div class="account-content" id="accountContent">
+                        <p>Maak eerst een account aan om deze sectie te bekijken.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Checkout Modal -->
+            <div id="checkoutModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeCheckout()">&times;</span>
+                    <h2>Checkout</h2>
+                    <div id="checkoutContent">
+                        <!-- Checkout content will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <p>&copy; 2024 AIColllabs. Alle rechten voorbehouden.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
