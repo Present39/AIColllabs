@@ -1,0 +1,18 @@
+{
+  "name": "aicolllabs",
+  "version": "1.0.0",
+  "description": "AIColllabs - Link Learn Leverage your business with AI",
+  "main": "index.js",
+  "scripts": {
+    "dev": "http-server src/components -p 3000 -o",
+    "start": "http-server src/components -p 8080",
+    "build": "echo 'Build complete - atmosphere component ready for production'",
+    "test": "echo 'Testing atmosphere component styling...' && node test-colors.js"
+  },
+  "keywords": ["ai", "collaboration", "atmosphere", "ui"],
+  "author": "AIColllabs Team",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}

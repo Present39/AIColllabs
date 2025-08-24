@@ -1,0 +1,209 @@
+/* AIColllabs Atmosphere Component Styles */
+/* Fix: Changed from kermis color to eggshell white/light background as per documentation */
+
+:root {
+    /* Atmosphere color palette - eggshell white/light theme */
+    --atmosphere-bg-primary: #faf9f6;      /* Eggshell white - main background */
+    --atmosphere-bg-secondary: #f5f4f1;    /* Slightly darker eggshell for variation */
+    --atmosphere-bg-tertiary: #eeede8;     /* Even lighter variation for depth */
+    
+    /* Text colors for good contrast on light backgrounds */
+    --atmosphere-text-primary: #333333;
+    --atmosphere-text-secondary: #666666;
+    --atmosphere-text-accent: #4a4a4a;
+    
+    /* Accent colors - avoiding kermis/carnival colors completely */
+    --atmosphere-accent-light: #e8f4f8;    /* Light blue-green instead of kermis colors */
+    --atmosphere-accent-medium: #b8dce8;   /* Medium blue-green */
+    --atmosphere-accent-soft: #f0f8f0;     /* Soft green tint */
+    
+    /* Removed all kermis/carnival colors completely */
+}
+
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    color: var(--atmosphere-text-primary);
+    background: var(--atmosphere-bg-primary); /* Eggshell white base */
+}
+
+/* Main atmosphere container */
+.atmosphere-container {
+    width: 100%;
+    min-height: 100vh;
+    background: var(--atmosphere-bg-primary); /* Eggshell white - no kermis colors */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Atmosphere component styling */
+.atmosphere-component {
+    width: 100%;
+    max-width: 1200px;
+    background: var(--atmosphere-bg-secondary); /* Slightly darker eggshell */
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08); /* Soft shadow for depth */
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Header styling */
+.atmosphere-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 20px;
+    background: var(--atmosphere-bg-tertiary); /* Light eggshell variation */
+    border-radius: 12px;
+}
+
+.atmosphere-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--atmosphere-text-primary);
+    margin-bottom: 10px;
+}
+
+.atmosphere-subtitle {
+    font-size: 1.2rem;
+    color: var(--atmosphere-text-secondary);
+    font-weight: 300;
+}
+
+/* Content area */
+.atmosphere-content {
+    background: var(--atmosphere-bg-primary); /* Pure eggshell white */
+    border-radius: 12px;
+    padding: 30px;
+}
+
+/* Character showcase */
+.character-showcase {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    margin-bottom: 30px;
+}
+
+.character {
+    background: var(--atmosphere-accent-light); /* Light blue-green instead of kermis colors */
+    border-radius: 12px;
+    padding: 24px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.character:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    border-color: var(--atmosphere-accent-medium);
+}
+
+.character h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--atmosphere-text-primary);
+    margin-bottom: 8px;
+}
+
+.character p {
+    color: var(--atmosphere-text-secondary);
+    font-size: 0.95rem;
+}
+
+/* Specific character styling - avoiding kermis colors completely */
+.character.claudette {
+    background: linear-gradient(135deg, var(--atmosphere-accent-light), var(--atmosphere-bg-tertiary));
+}
+
+.character.stuwey {
+    background: linear-gradient(135deg, var(--atmosphere-accent-soft), var(--atmosphere-bg-secondary));
+}
+
+.character.clube {
+    background: linear-gradient(135deg, var(--atmosphere-bg-tertiary), var(--atmosphere-accent-light));
+}
+
+/* Description area */
+.atmosphere-description {
+    background: var(--atmosphere-bg-secondary);
+    border-radius: 12px;
+    padding: 24px;
+    text-align: center;
+}
+
+.atmosphere-description p {
+    font-size: 1.1rem;
+    color: var(--atmosphere-text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .atmosphere-component {
+        padding: 20px;
+    }
+    
+    .atmosphere-header h1 {
+        font-size: 2rem;
+    }
+    
+    .character-showcase {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+}
+
+/* Development/Production environment consistency */
+/* Ensure eggshell white background is consistent across all environments */
+html {
+    background: var(--atmosphere-bg-primary) !important; /* Force eggshell white */
+}
+
+/* Additional utility classes for consistent atmosphere styling */
+.atmosphere-bg {
+    background: var(--atmosphere-bg-primary) !important; /* Eggshell white */
+}
+
+.atmosphere-bg-secondary {
+    background: var(--atmosphere-bg-secondary) !important;
+}
+
+.atmosphere-bg-tertiary {
+    background: var(--atmosphere-bg-tertiary) !important;
+}
+
+/* Explicitly override any potential kermis/carnival backgrounds */
+.atmosphere-component,
+.atmosphere-component *,
+.atmosphere-container,
+.atmosphere-container * {
+    /* Ensure no kermis/carnival colors can appear */
+    background-color: var(--atmosphere-bg-primary, #faf9f6) !important;
+}
+
+.atmosphere-component .character,
+.atmosphere-component .atmosphere-header,
+.atmosphere-component .atmosphere-content {
+    /* Restore proper backgrounds for these specific elements */
+    background: var(--atmosphere-bg-secondary) !important;
+}
+
+.character.claudette,
+.character.stuwey,
+.character.clube {
+    /* Restore character-specific backgrounds */
+    background: var(--atmosphere-accent-light) !important;
+}
